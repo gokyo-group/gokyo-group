@@ -5,11 +5,10 @@ image: /img/greenView.jpg
 heading: An Organization with Values and Objectives
 subheading: Supporting Development, Sustainability, and Economic Prosperity
 mainpitch:
-  title: Why GIRC Nepal?
+  title: BUILDING THE FUTURE
   description: >
-    Green Innovative Research Center Nepal is committed to empower the deprived group of society through awareness,
-    social mobilization, capacity and livelihood improvement. Its Mission Statement is
-    "Facilitating to build a more resilient and equitable development of societies in Nepal".
+    Gokyo Group offer one stop packaged solutions for your project from design, project,
+    construction management  and all aspects of removal works including repairs, renovations and extensions.
 description: >
   For us, Green is not specific to environmental greenery; GIRC relates the word green to food, shelter,
   health, culture, peace and development. For this reason our NGO, in addition to plantation &

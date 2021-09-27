@@ -1,6 +1,10 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
+import facebook from '../../img/social/facebook.svg'
+import instagram from '../../img/social/instagram.svg'
+import twitter from '../../img/social/twitter.svg'
+import linkedin from '../../img/social/linkedin.svg'
 
 function encode(data) {
   return Object.keys(data)
@@ -36,7 +40,7 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
-        <section className="section">
+        {/* <section className="section">
           <div className="container">
             <div className="columns is-variable is-7">
               <div className="column is-two-fifths" 
@@ -58,12 +62,6 @@ export default class Index extends React.Component {
                       Hello there, please send us any questions, comments,
                       or enquiry. We will try to get back to you as soon as possible.
                     </h3>
-                    <p>
-                      Contact: +977-9851095763 (Kathmandu, Nepal)
-                    </p>
-                    <p>
-                      Email: <a href="mailto:paruchhatkuli@gmail.com">Dr. Pratap Chhatkuli</a>
-                    </p>
                     <p>{' '}</p>
                   </div>
               </div>
@@ -78,9 +76,9 @@ export default class Index extends React.Component {
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
                       onSubmit={this.handleSubmit}
-                    >
+                    > */}
                       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                      <input type="hidden" name="form-name" value="contact" />
+                      {/* <input type="hidden" name="form-name" value="contact" />
                       <div hidden>
                         <label>
                           Don’t fill this out:{' '}
@@ -137,6 +135,78 @@ export default class Index extends React.Component {
                         </button>
                       </div>
                     </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> */}
+
+
+        <section className="hero is-fullheight">
+          <div className="hero-body">
+            <div className="container has-text-centered">
+              <div className="columns is-8 is-variable ">
+                <div className="column is-two-thirds has-text-left">
+                  <h1 className="title is-1">Contact Us</h1>
+                  <p className="is-size-4"> Please send us any questions, comments,
+                      or enquiry. We will try to get back to you as soon as possible.</p>
+                  <div className="social-media">
+
+                  <div>
+                    <h2 className="is-size-4">Connect with us:</h2>
+                    <a className="px-1" title="facebook" href="https://facebook.com">
+                      <img
+                        src={facebook}
+                        alt="Facebook"
+                        style={{ width: '2em', height: '2em' }}
+                      />
+                    </a>
+                    <a className="px-1" title="twitter" href="https://twitter.com">
+                      <img
+                        className="fas fa-lg"
+                        src={twitter}
+                        alt="Twitter"
+                        style={{ width: '2em', height: '2em' }}
+                      />
+                    </a>
+                    <a className="px-1" title="instagram" href="https://linkedin.com">
+                      <img
+                        src={linkedin}
+                        alt="Instagram"
+                        style={{ width: '2em', height: '2em' }}
+                      />
+                    </a>
+                  </div>
+                  </div>
+                </div>
+                <div className="column is-one-third has-text-left">
+                  <div className="field">
+                    <label className="label">Name</label>
+                    <div className="control">
+                      <input className="input is-medium" type="text"/>
+                    </div>
+                  </div>
+                  <div className="field">
+                    <label className="label">Phone</label>
+                    <div className="control">
+                      <input className="input is-medium" type="tel"/>
+                    </div>
+                  </div>
+                  <div className="field">
+                    <label className="label">Email</label>
+                    <div className="control">
+                      <input className="input is-medium" type="text"/>
+                    </div>
+                  </div>
+                  <div className="field">
+                    <label className="label">Message</label>
+                    <div className="control">
+                      <textarea className="textarea is-medium"></textarea>
+                    </div>
+                  </div>
+                  <div className="control">
+                    <button type="submit" className="button is-link is-fullwidth has-text-weight-medium is-medium">Send Message</button>
                   </div>
                 </div>
               </div>

@@ -2,23 +2,27 @@
 
 // Config vars
 // Kaldi logo brand color: #FD461E
-$kaldi-red: #2c549e
+$kaldi-red: #FD461E
 $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
-$black: #2b2523
+$black: #000000
 
 div
   font-family: 'Merriweather Sans'
 
-h1,h2,h3,h4,h5,h6
+h1,h2,h3,h4,h5,h6,button
   font-family: 'Merriweather'
 
 .navbar .navbar-menu
   font-family: 'Merriweather Sans'
   box-shadow:none !important
+
+.navbar-link
+  color:#ff0000
+  border-color:#ff0000
 
 .content .taglist
   list-style: none
@@ -89,16 +93,18 @@ h1,h2,h3,h4,h5,h6
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
-  padding: 3rem 0rem 0rem
+  padding-top: 5rem
+  padding-bottom: 4rem
+  // padding: 3rem 0rem 0rem
   background-color: transparent
 
 //Menu overrides
 $menu-item-color: $white-ter
 $menu-item-hover-color: $black !important
 $menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
+$menu-item-active-color: #000000
+$menu-item-active-background-color:	#000000
+$menu-list-border-left: 1px solid #000000
 $menu-label-color: $white-ter
 
 
@@ -138,18 +144,185 @@ $menu-label-color: $white-ter
 // responsiveness
 +tablet-only
   .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
+    flex-basis: 50%
 
 +mobile
   .blog-list-item header
     display: block
   .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+    text-align: center
+    max-width: 70%
+    margin: 0 0 1em
+
 
 
 //!----------below was added to adjust the size of the navbar logo,
 // it was added at the end because of the order of the css
 .navbar-item img
   max-height: 4rem
+
+//for the new contact page template
+//----------------------------------------------------------------------------
+.social-media 
+  margin-top: 30px
+
+
+.social-media a 
+  margin-right: 10px
+
+
+.field:not(:last-child) 
+  margin-bottom: 20px
+
+
+@media screen and (min-width: 768px) 
+  body 
+    padding-top: calc(3.25rem + 20px)
+  
+
+  .navbar 
+    padding: 10px 0
+    position: fixed
+    top: 0
+    width: 100%
+  
+
+  .hero.is-fullheight 
+    min-height: calc(100vh - 6.5rem - 40px)
+
+
+
+/* Blur */
+// for the landing page options------------------------------------------------------
+.simplecontainer 
+  position: relative
+
+
+.image 
+  display: block
+  width: 100%
+  height: auto
+
+
+.overlay 
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transition: .5s ease;
+
+
+.container:hover .overlay 
+  opacity: 1
+
+#textHover
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+
+/* Blur */
+.hover07 img 
+	-webkit-filter: blur(0)
+	filter: blur(0)
+
+.hover07:hover img 
+	-webkit-filter: blur(4px)
+	filter: blur(4px)
+	-webkit-transition: .3s ease-in-out
+	transition: .3s ease-in-out
+
+
+// cool gallery fluid one
+//---------------------------------------------------------------------
+
+.item-slide 
+  box-sizing: border-box
+
+
+/* The Modal (background) */
+.modal 
+  display: none
+  position: fixed
+  z-index: 1
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0,0,0.5)
+
+/* Modal Content */
+.modal-content 
+  position: relative
+  background-color: rgba(0,0,0,0)
+  width: 90%
+  max-width: 1200px
+  max-height: 700px
+  overflow: hidden
+  text-align: center
+
+.modal img 
+  height: 100vh
+
+
+.item-slide
+  display: none
+
+
+/* Next & previous buttons */
+.prev,
+.next 
+  cursor: pointer
+  position: absolute
+  top: 50%
+  width: auto
+  padding: 16px
+  margin-top: -50px
+  color: white
+  font-weight: bold
+  font-size: 20px
+  transition: 0.6s ease
+  border-radius: 0 3px 3px 0
+  user-select: none
+  -webkit-user-select: none
+
+
+/* Position the "next button" to the right */
+.next 
+  right: 0
+  border-radius: 3px 0 0 3px
+
+
+
+/* Number text (1/3 etc) */
+.numbertext 
+  color: #887f7f
+  font-size: 12px
+  padding: 8px 12px
+  position: absolute
+  right: 0
+  top: 0
+
+
+.item-slide img 
+  max-width: 1200px
+
+
+.caption-container 
+  color: white
+
+
+.column img
+  margin-top: 20px
+
+// ------------------------------------------------------------
+.navbar-item, .navbar-link, .navbar-burger
+  color:#ff0000
+  border-color:#ff0000

@@ -11,14 +11,70 @@ const Footer = class extends React.Component {
   render() {
     return (
       <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
+        {/* overall column system */}
+        <div className="container mt-1 mb-1 pt-1 pb-4">
+          <div className="container">
+            <div style={{ maxWidth: '100vw' }} className="content has-text-centered columns">
+              {/* column with logo */}
+              <div className="column is-one-third">
+                <img
+                  src={logo}
+                  alt="Gokyo"
+                  style={{ width: '14em', height: '10em' }}
+                />
+              </div>
+              {/* column with the rest */}
+              <div className="column is-two-thirds">
+                <div className="columns">
+                  <div className="column is-4 social">
+                    <h2 className="has-text-danger">Contact us</h2>
+                    <p>
+                      NEPAL: +977 9801969003
+                    </p>
+                    <p>
+                      AUSTRALIA: + 61 433307656
+                    </p>
+                    <p>
+                      NEPAL: + 61 433938551
+
+                    </p>
+                  </div>
+                  <div className="column is-4 social">
+                    <h2 className="has-text-danger">Offices</h2>
+                    <p>KATHMANDU, NEPAL</p>
+                    <p>SYDNEY, AUSTRALIA</p>
+                  </div>
+                  <div className="column is-4 social">
+                    <h2 className="has-text-danger">Connect with us</h2>
+                    <a title="facebook" href="https://facebook.com">
+                      <img
+                        src={facebook}
+                        alt="Facebook"
+                        style={{ width: '1em', height: '1em' }}
+                      />
+                    </a>
+                    <a title="twitter" href="https://twitter.com">
+                      <img
+                        className="fas fa-lg"
+                        src={twitter}
+                        alt="Twitter"
+                        style={{ width: '1em', height: '1em' }}
+                      />
+                    </a>
+                    <a title="instagram" href="https://instagram.com">
+                      <img
+                        src={instagram}
+                        alt="Instagram"
+                        style={{ width: '1em', height: '1em' }}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
+        {/* <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
             <div style={{ maxWidth: '100vw' }} className="columns">
               <div className="column is-4">
@@ -106,7 +162,7 @@ const Footer = class extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </footer>
     )
   }
