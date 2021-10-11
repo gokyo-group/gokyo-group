@@ -29,6 +29,63 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
+  - name: "services"
+    label: "Services"
+    files: 
+      - file: "src/pages/projectmanagement/index.md"
+        label: "Project Management"
+        name: "projectmanagement"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "src/pages/construction/index.md"
+        label: "Construction"
+        name: "construction"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
+      - file: "src/pages/design/index.md"
+        label: "Design"
+        name: "design"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "src/pages/remedial/index.md"
+        label: "Remedial"
+        name: "remedial"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "src/pages/facilitiesmanagement/index.md"
+        label: "Building and facilities management"
+        name: "facilitiesmanagement"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
+      - file: "src/pages/valuation/index.md"
+        label: "Valuation"
+        name: "valuation"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+        
   - name: "pages"
     label: "Pages"
     files:
@@ -50,6 +107,7 @@ collections:
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: Image, name: image, widget: image}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/products/index.md"

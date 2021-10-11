@@ -8,25 +8,21 @@ import BlogRoll from '../components/BlogRoll'
 
 export const IndexPageTemplate = ({
   image,
+  image1,
+  image2,
+  image3,
   title,
-  heading,
-  subheading,
   mainpitch,
-  description,
-  intro,
 }) => (
-      <div>
+      <div className="container">
           <section className="hero">
             <figure className="image">
-                <img src="https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
+              <img src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} style={{maxWidth:'100%'}}/>
             </figure>
           </section>
 
-          {/* --------------------------------- */}
-
           <section className="section">
             <div className="container">
-              {/* <div className="section"> */}
                 <div className="columns">
                   <div className="column is-one-quarter">
                     <div className="content">
@@ -48,11 +44,8 @@ export const IndexPageTemplate = ({
                     </div>
                   </div>
                 </div>
-              {/* </div> */}
             </div>
           </section>
-          {/* --------------------------------------- */}
-
 
           <section className="section section--gradient">
           <div className="container has-text-centered">
@@ -61,7 +54,7 @@ export const IndexPageTemplate = ({
               <div className="column">
                 <div className="hover07 simplecontainer">
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src="https://unsplash.it/300/200/?random&pic=1" className="image" alt="Avatar"/>
+                    <img src="https://unsplash.it/300/200/?random&pic=1" className="image"/>
                   </figure>
                   <div className="overlay">
                     <div id="textHover"><h1 className="has-text-white">About Us</h1></div>
@@ -72,7 +65,7 @@ export const IndexPageTemplate = ({
               <div className="column">
               <div className="hover07 simplecontainer">
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src="https://unsplash.it/300/200/?random&pic=2" className="image" alt="Avatar"/>
+                    <img src="https://unsplash.it/300/200/?random&pic=2" className="image"/>
                   </figure>
                   <div className="overlay">
                     <div id="textHover"><h1 className="has-text-white">Services</h1></div>
@@ -83,7 +76,7 @@ export const IndexPageTemplate = ({
               <div className="column">
               <div className="hover07 simplecontainer">
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src="https://unsplash.it/300/200/?random&pic=3" className="image" alt="Avatar"/>
+                    <img src="https://unsplash.it/300/200/?random&pic=3" className="image"/>
                   </figure>
                   <div className="overlay">
                     <div id="textHover"><h1 className="has-text-white">Portfolio</h1></div>
@@ -96,106 +89,6 @@ export const IndexPageTemplate = ({
           </div>
           </section>
       </div>
-  // <div>
-  //   <div
-  //     className="full-width-image margin-top-0"
-  //     style={{
-  //       backgroundImage: `url(${
-  //         !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-  //       })`,
-  //       backgroundPosition: `top left`,
-  //       backgroundAttachment: `fixed`,
-  //     }}
-  //   >
-  //     <div
-  //       style={{
-  //         display: 'flex',
-  //         height: '150px',
-  //         lineHeight: '1',
-  //         justifyContent: 'space-around',
-  //         alignItems: 'left',
-  //         flexDirection: 'column',
-  //       }}
-  //     >
-  //       <h1
-  //         className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-  //         style={{
-  //           // boxShadow:
-  //           //   'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-  //           // backgroundColor: 'rgb(255, 68, 0)',
-  //           color: 'white',
-  //           lineHeight: '1',
-  //           padding: '0.25em',
-  //           textAlign: 'center'
-  //         }}
-  //       >
-  //         {title}
-  //       </h1>
-  //       <h3
-  //         className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-  //         style={{
-  //           // boxShadow:
-  //           //   'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-  //           // backgroundColor: 'rgb(255, 68, 0)',
-  //           color: 'white',
-  //           lineHeight: '1',
-  //           padding: '0.25em',
-  //           textAlign:'center'
-  //         }}
-  //       >
-  //         {subheading}
-  //       </h3>
-  //     </div>
-  //   </div>
-  //   <section className="section section--gradient">
-  //     <div className="container">
-  //       <div className="section">
-  //         <div className="columns">
-  //           <div className="column is-10 is-offset-1">
-  //             <div className="content">
-  //               <div className="content">
-  //                 <div className="tile">
-  //                   <h1 className="title">{mainpitch.title}</h1>
-  //                 </div>
-  //                 <div className="tile">
-  //                   <h3 className="subtitle">{mainpitch.description}</h3>
-  //                 </div>
-  //               </div>
-  //               <div className="columns">
-  //                 <div className="column is-12">
-  //                   <h3 className="has-text-weight-semibold is-size-2">
-  //                     {heading}
-  //                   </h3>
-  //                   <p>{description}</p>
-  //                 </div>
-  //               </div>
-  //               <Features gridItems={intro.blurbs} />
-  //               <div className="columns">
-  //                 <div className="column is-12 has-text-centered">
-  //                   <Link className="btn" to="/products">
-  //                     See all Services
-  //                   </Link>
-  //                 </div>
-  //               </div>
-  //               <div className="column is-12">
-  //                 <h3 className="has-text-weight-semibold is-size-2">
-  //                   Latest stories
-  //                 </h3>
-  //                 <h5>Blogs under construction</h5>
-  //                 {/* <BlogRoll /> */}
-  //                 <div className="column is-12 has-text-centered">
-  //                   <Link className="btn" to="/blog">
-  //                     Read more
-  //                   </Link>
-  //                 </div>
-  //               </div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </section>
-  // </div>
 )
 
 IndexPageTemplate.propTypes = {
@@ -250,25 +143,33 @@ export const pageQuery = graphql`
             }
           }
         }
-        heading
-        subheading
+
+        image1 {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+
+        image2 {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+
+        image3 {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+
         mainpitch {
           title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
           description
         }
       }

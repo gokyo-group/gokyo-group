@@ -77,20 +77,24 @@ const Navbar = class extends React.Component {
                       Project Management
                     </Link>
                     <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/team">
+                    <Link className="navbar-item" to="/construction">
                       Construction
                     </Link>
                     <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/team">
+                    <Link className="navbar-item" to="/design">
                       Design
                     </Link>
                     <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/team">
+                    <Link className="navbar-item" to="/remedial">
                       Remedial
                     </Link>
                     <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/team">
+                    <Link className="navbar-item" to="/facilitiesmanagement">
                       Building and Facilities Management
+                    </Link>
+                    <hr class="navbar-divider"/>
+                    <Link className="navbar-item" to="/valuation">
+                      Valuation
                     </Link>
                   </div>
                 </Link>
