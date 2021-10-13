@@ -98,11 +98,8 @@ const Navbar = class extends React.Component {
                     </Link>
                   </div>
                 </Link>
-                {/* <Link className="navbar-item" to="/blog">
-                  Publications/Releases
-                </Link> */}
-                <Link className="navbar-item has-dropdown is-hoverable" to="/products">
-                <a class="navbar-link">
+                {/* <Link className="navbar-item has-dropdown is-hoverable" to="/products">
+                  <a class="navbar-link">
                     Portfolio
                   </a>
                   <div class="navbar-dropdown has-text-centered">
@@ -118,7 +115,7 @@ const Navbar = class extends React.Component {
                       Project List
                     </Link>
                   </div>
-                </Link>
+                </Link> */}
                 <Link className="navbar-item" to="/contact">
                   <button class="button is-warning">Contact</button>
                 </Link>
