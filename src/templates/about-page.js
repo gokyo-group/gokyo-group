@@ -38,7 +38,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                           <div className="card">
                               <div className="card-image">
                                   <figure className="image is-2by2">
-                                      <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
+                                  <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
                                   </figure>
                               </div>
                               <div className="card-content">
@@ -60,7 +60,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                           <div className="card">
                               <div className="card-image">
                                   <figure className="image is-2by2">
-                                      <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
+                                  <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
                                   </figure>
                               </div>
                               <div className="card-content">
@@ -70,7 +70,6 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                                           <p className="subtitle is-6">CONSULTANT</p>
                                       </div>
                                   </div>
-
                                   <div className="content">
                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                       <a href="#">linkedIn/facebook/twitter</a>
@@ -79,12 +78,11 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                           </div>
                       </div>
 
-
                       <div className="column">
                           <div className="card">
                               <div className="card-image">
                                   <figure className="image is-2by2">
-                                      <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
+                                  <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
                                   </figure>
                               </div>
                               <div className="card-content">
@@ -94,7 +92,6 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                                           <p className="subtitle is-6">CONSULTANT</p>
                                       </div>
                                   </div>
-
                                   <div className="content">
                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                       <a href="#">linkedIn/facebook/twitter</a>
@@ -102,13 +99,8 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                               </div>
                           </div>
                       </div>
-
-
                   </div>
               </div>
-          {/* </section> */}
-
-
           </div>
         </div>
       </div>
@@ -140,6 +132,31 @@ AboutPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
+
+// image1 {
+//   childImageSharp {
+//     fluid(maxWidth: 2048, quality: 100) {
+//       ...GatsbyImageSharpFluid
+//     }
+//   }
+// }
+
+// image2 {
+//   childImageSharp {
+//     fluid(maxWidth: 2048, quality: 100) {
+//       ...GatsbyImageSharpFluid
+//     }
+//   }
+// }
+
+// image3 {
+//   childImageSharp {
+//     fluid(maxWidth: 2048, quality: 100) {
+//       ...GatsbyImageSharpFluid
+//     }
+//   }
+// }
+
 export default AboutPage
 
 export const aboutPageQuery = graphql`
@@ -149,6 +166,8 @@ export const aboutPageQuery = graphql`
       frontmatter {
         title
       }
+
+      
     }
   }
 `

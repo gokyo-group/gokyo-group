@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import SectorDisplay from '../components/SectorDisplay'
 
 export const IndexPageTemplate = ({
   image,
@@ -50,36 +51,36 @@ export const IndexPageTemplate = ({
           <section className="section section--gradient">
           <div className="container has-text-centered">
           <div className="content">
-            <div className="columns is-centered">
+            <div className="columns is-centered is-mobile">
               <div className="column">
-                <div className="hover07 simplecontainer">
+                <div className="hover01 simplecontainer">
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src="https://unsplash.it/300/200/?random&pic=1" className="image"/>
+                    <img src={!!image1.image.childImageSharp ? image1.image.childImageSharp.fluid.src : image1.image} style={{maxWidth:'100%'}}/>
                   </figure>
                   <div className="overlay">
-                    <div id="textHover"><h1 className="has-text-white">About Us</h1></div>
+                    <div id="textHover"><h1 className="has-text-white">{image1.alt}</h1></div>
                   </div>
                 </div>
               </div>
 
               <div className="column">
-              <div className="hover07 simplecontainer">
+              <div className="hover01 simplecontainer">
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src="https://unsplash.it/300/200/?random&pic=2" className="image"/>
+                  <img src={!!image2.image.childImageSharp ? image2.image.childImageSharp.fluid.src : image2.image} style={{maxWidth:'100%'}}/>
                   </figure>
                   <div className="overlay">
-                    <div id="textHover"><h1 className="has-text-white">Services</h1></div>
+                    <div id="textHover"><h1 className="has-text-white">{image2.alt}</h1></div>
                   </div>
                 </div>
               </div>
 
               <div className="column">
-              <div className="hover07 simplecontainer">
+              <div className="hover01 simplecontainer">
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src="https://unsplash.it/300/200/?random&pic=3" className="image"/>
+                    <img src={!!image3.image.childImageSharp ? image3.image.childImageSharp.fluid.src : image3.image} style={{maxWidth:'100%'}}/>
                   </figure>
                   <div className="overlay">
-                    <div id="textHover"><h1 className="has-text-white">Portfolio</h1></div>
+                    <div id="textHover"><h1 className="has-text-white">{image3.alt}</h1></div>
                   </div>
                 </div>
               </div>
@@ -88,19 +89,18 @@ export const IndexPageTemplate = ({
           </div>
           </div>
           </section>
-      </div>
+          <hr/>
+          <SectorDisplay/>
+    </div>
 )
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
   mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  image1: PropTypes.object,
+  image2: PropTypes.object,
+  image3: PropTypes.object,
 }
 
 const IndexPage = ({ data }) => {
@@ -111,11 +111,10 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        image1={frontmatter.image1}
+        image2={frontmatter.image2}
+        image3={frontmatter.image3}
       />
     </Layout>
   )
@@ -145,25 +144,34 @@ export const pageQuery = graphql`
         }
 
         image1 {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+          alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
 
         image2 {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+          alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
 
         image3 {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+            alt
+            image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }

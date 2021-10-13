@@ -8,15 +8,13 @@ mainpitch:
     Gokyo Group offer one stop packaged solutions for your project from design, project,
     construction management  and all aspects of removal works including repairs, renovations and extensions.
 
-main:
-  heading: Great coffee with no compromises
-  image1:
-    alt: About us
-    image: /img/about-us.jpg
-  image2:
-    alt: Services
-    image: /img/services.jpg
-  image3:
-    alt: Portfolio
-    image: /img/portfolio.jpg
+image1:
+  alt: About us
+  image: /img/about-us.jpg
+image2:
+  alt: Services
+  image: /img/services.jpg
+image3:
+  alt: Portfolio
+  image: /img/portfolio.jpg
 ---
