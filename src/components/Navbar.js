@@ -116,9 +116,9 @@ const Navbar = class extends React.Component {
                     </Link>
                   </div>
                 </Link> */}
-                <Link className="navbar-item" to="/contact">
+                {/* <Link className="navbar-item" to="/contact">
                   <button class="button is-warning">Contact</button>
-                </Link>
+                </Link> */}
 
                 {/* this is commented because we dont need this right now, 
                 this has link to the contact and upload page */}
