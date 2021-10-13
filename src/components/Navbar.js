@@ -100,18 +100,18 @@ const Navbar = class extends React.Component {
                 </Link>
                 <Link className="navbar-item has-dropdown is-hoverable" to="/products">
                   <a class="navbar-link">
-                    Portfolio
+                  Portfolio
                   </a>
                   <div class="navbar-dropdown has-text-centered">
-                    <Link className="navbar-item" to="/about">
-                     Future Projects
+                    <Link className="navbar-item" to="/projectmanagement">
+                      Future Projects
                     </Link>
                     <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/gallery">
+                    <Link className="navbar-item" to="/construction">
                       Gallery
                     </Link>
                     <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/team">
+                    <Link className="navbar-item" to="/design">
                       Project List
                     </Link>
                   </div>
