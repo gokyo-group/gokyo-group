@@ -4,7 +4,14 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+export const AboutPageTemplate = ({
+    title, 
+    content, 
+    contentComponent, 
+    image1,
+    // image2,
+    // image3
+   }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -26,81 +33,81 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
               </h1>
               <PageContent className="content has-text-centered" content={content} />
             </div>
-            <hr/>
+            <hr />
 
             {/* <section className="section"> */}
-              <div className="container has-text-centered">
-                  <h2 className="title is-size-3 has-text-weight-bold is-bold-light has-text-centered">OUR PEOPLE</h2>
+            <div className="container has-text-centered">
+              <h2 className="title is-size-3 has-text-weight-bold is-bold-light has-text-centered">OUR PEOPLE</h2>
 
-                  <div className="columns is-centered" >
-                  
-                      <div className="column">
-                          <div className="card">
-                              <div className="card-image">
-                                  <figure className="image is-2by2">
-                                  <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
-                                  </figure>
-                              </div>
-                              <div className="card-content">
-                                  <div className="media">
-                                      <div className="media-content">
-                                          <p className="title is-4">SABIN SHRESTHA</p>
-                                          <p className="subtitle is-6">DIRECTOR</p>
-                                      </div>
-                                  </div>
+              <div className="columns is-centered" >
 
-                                  <div className="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                                      <a href="#">linkedIn/facebook/twitter</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div className="column">
-                          <div className="card">
-                              <div className="card-image">
-                                  <figure className="image is-2by2">
-                                  <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
-                                  </figure>
-                              </div>
-                              <div className="card-content">
-                                  <div className="media">
-                                      <div className="media-content">
-                                          <p className="title is-4">SUJAN DEVKOTA</p>
-                                          <p className="subtitle is-6">CONSULTANT</p>
-                                      </div>
-                                  </div>
-                                  <div className="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                                      <a href="#">linkedIn/facebook/twitter</a>
-                                  </div>
-                              </div>
-                          </div>
+                <div className="column">
+                  <div className="card">
+                    <div className="card-image">
+                      <figure className="image is-2by2">
+                        <img src={!!image1.childImageSharp ? image1.childImageSharp.fluid.src : image1} style={{ maxWidth: '100%' }} />
+                      </figure>
+                    </div>
+                    <div className="card-content">
+                      <div className="media">
+                        <div className="media-content">
+                          <p className="title is-4">SABIN SHRESTHA</p>
+                          <p className="subtitle is-6">DIRECTOR</p>
+                        </div>
                       </div>
 
-                      <div className="column">
-                          <div className="card">
-                              <div className="card-image">
-                                  <figure className="image is-2by2">
-                                  <img src="https://source.unsplash.com/800x1000/?person" alt="Placeholder image"/>
-                                  </figure>
-                              </div>
-                              <div className="card-content">
-                                  <div className="media">
-                                      <div className="media-content">
-                                          <p className="title is-4">SAKSHAM DEVKOTA</p>
-                                          <p className="subtitle is-6">CONSULTANT</p>
-                                      </div>
-                                  </div>
-                                  <div className="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                                      <a href="#">linkedIn/facebook/twitter</a>
-                                  </div>
-                              </div>
-                          </div>
+                      <div className="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                        <a href="#">linkedIn/facebook/twitter</a>
                       </div>
+                    </div>
                   </div>
+                </div>
+                <div className="column">
+                  <div className="card">
+                    <div className="card-image">
+                      <figure className="image is-2by2">
+                        {/* <img src={!!image2.childImageSharp ? image2.childImageSharp.fluid.src : image2} style={{ maxWidth: '100%' }} /> */}
+                      </figure>
+                    </div>
+                    <div className="card-content">
+                      <div className="media">
+                        <div className="media-content">
+                          <p className="title is-4">SUJAN DEVKOTA</p>
+                          <p className="subtitle is-6">CONSULTANT</p>
+                        </div>
+                      </div>
+                      <div className="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                        <a href="#">linkedIn/facebook/twitter</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="column">
+                  <div className="card">
+                    <div className="card-image">
+                      <figure className="image is-2by2">
+                        {/* <img src={!!image3.childImageSharp ? image3.childImageSharp.fluid.src : image3} style={{ maxWidth: '100%' }} /> */}
+                      </figure>
+                    </div>
+                    <div className="card-content">
+                      <div className="media">
+                        <div className="media-content">
+                          <p className="title is-4">SAKSHAM DEVKOTA</p>
+                          <p className="subtitle is-6">CONSULTANT</p>
+                        </div>
+                      </div>
+                      <div className="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                        <a href="#">linkedIn/facebook/twitter</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -112,6 +119,9 @@ AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  image1: PropTypes.object,
+  // image2: PropTypes.object,
+  // image3: PropTypes.object
 }
 
 const AboutPage = ({ data }) => {
@@ -123,35 +133,31 @@ const AboutPage = ({ data }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
+        image1={post.frontmatter.image1}
+        // image2={post.frontmatter.image2}
+        // image3={post.frontmatter.image3}
       />
     </Layout>
   )
 }
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object,
+  }),
 }
 
 
-// image1 {
-//   childImageSharp {
-//     fluid(maxWidth: 2048, quality: 100) {
-//       ...GatsbyImageSharpFluid
-//     }
-//   }
-// }
-
 // image2 {
 //   childImageSharp {
-//     fluid(maxWidth: 2048, quality: 100) {
+//     fluid(maxWidth: 500, quality: 100) {
 //       ...GatsbyImageSharpFluid
 //     }
 //   }
 // }
-
 // image3 {
 //   childImageSharp {
-//     fluid(maxWidth: 2048, quality: 100) {
+//     fluid(maxWidth: 500, quality: 100) {
 //       ...GatsbyImageSharpFluid
 //     }
 //   }
@@ -160,11 +166,19 @@ AboutPage.propTypes = {
 export default AboutPage
 
 export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query AboutPage {
+    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
       html
       frontmatter {
         title
+        image1 {
+          childImageSharp {
+            fluid(maxWidth: 500, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        
       }
       
     }

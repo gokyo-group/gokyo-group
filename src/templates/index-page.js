@@ -7,7 +7,7 @@ import SectorDisplay from '../components/SectorDisplay'
 
 export const IndexPageTemplate = ({
   image,
-  image1,
+  image12,
   image2,
   image3,
   title,
@@ -50,16 +50,16 @@ export const IndexPageTemplate = ({
           <div className="container has-text-centered">
           <div className="content">
             <div className="columns is-centered">
-              {/* <div className="column">
+              <div className="column">
                 <div className="hover01 simplecontainer">
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src={!!image1.image.childImageSharp ? image1.image.childImageSharp.fluid.src : image1.image} style={{maxWidth:'100%'}}/>
+                    <img src={!!image12.image.childImageSharp ? image12.image.childImageSharp.fluid.src : image12.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
-                    <div id="textHover"><h1 className="has-text-white">{image1.alt}</h1></div>
+                  <div className="overlay" onClick={()=>{window.location.href='/about'}}>
+                    <div id="textHover"><h1 className="has-text-white">{image12.alt}</h1></div>
                   </div>
                 </div>
-              </div> */}
+              </div>
 
               <div className="column">
               <div className="hover01 simplecontainer">
@@ -96,7 +96,7 @@ IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   mainpitch: PropTypes.object,
-  image1: PropTypes.object,
+  image12: PropTypes.object,
   image2: PropTypes.object,
   image3: PropTypes.object,
 }
@@ -110,7 +110,7 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         mainpitch={frontmatter.mainpitch}
-        // image12={frontmatter.image1}
+        image12={frontmatter.image12}
         image2={frontmatter.image2}
         image3={frontmatter.image3}
       />
@@ -152,7 +152,16 @@ export const pageQuery = graphql`
           }
         }
 
-        
+        image12 {
+          alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
 
         image2 {
           alt
