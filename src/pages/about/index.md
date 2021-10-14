@@ -2,7 +2,7 @@
 templateKey: 'about-page'
 path: /about
 title: ABOUT US
-# image1: /img/sabin.jpg
+image1: /img/sabin.jpg
 # image2: /img/sujan.jpg
 # image3: /img/saksham.jpg
 ---

@@ -7,8 +7,7 @@ mainpitch:
   description: >
     Gokyo Group offer one stop packaged solutions for your project from design, project,
     construction management  and all aspects of removal works including repairs, renovations and extensions.
-
-image1:
+image12:
   alt: About us
   image: /img/about-us.jpg
 image2:

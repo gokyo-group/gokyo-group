@@ -2,7 +2,7 @@ import React from 'react'
 import health from '../img/icons/health-sector.png'
 import education from '../img/icons/education-sector.png'
 import commercial from '../img/icons/commercial-sector.png'
-import residential from '../img/icons/health-sector.png'
+import residential from '../img/icons/residential-sector.png'
 import retail from '../img/icons/retail-sector.png'
 import community from '../img/icons/community-sector.png'
 

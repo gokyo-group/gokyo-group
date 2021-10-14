@@ -69,7 +69,7 @@ const Navbar = class extends React.Component {
                 About Us
               </Link>
 
-              <Link id="services-navbar" className="navbar-item has-dropdown is-hoverable" to="/products">
+              <Link id="services-navbar" className="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                   Services
                 </a>
@@ -100,7 +100,7 @@ const Navbar = class extends React.Component {
                 </div>
               </Link>
 
-              <Link id="portfolio-navbar" className="navbar-item has-dropdown is-hoverable" to="/products">
+              <Link id="portfolio-navbar" className="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                   Portfolio
                 </a>
@@ -109,7 +109,7 @@ const Navbar = class extends React.Component {
                     Future Projects
                   </Link>
                   {/* <hr class="navbar-divider" /> */}
-                  <Link id="gallery-navbar" className="navbar-item" to="/construction">
+                  <Link id="gallery-navbar" className="navbar-item" to="/gallery">
                     Gallery
                   </Link>
                   {/* <hr class="navbar-divider" /> */}
