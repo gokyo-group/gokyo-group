@@ -9,7 +9,7 @@ export const AboutPageTemplate = ({
     content, 
     contentComponent, 
     image1,
-    // image2,
+    image22,
     // image3
    }) => {
   const PageContent = contentComponent || Content
@@ -67,7 +67,7 @@ export const AboutPageTemplate = ({
                   <div className="card">
                     <div className="card-image">
                       <figure className="image is-2by2">
-                        {/* <img src={!!image2.childImageSharp ? image2.childImageSharp.fluid.src : image2} style={{ maxWidth: '100%' }} /> */}
+                        <img src={!!image22.childImageSharp ? image22.childImageSharp.fluid.src : image22} style={{ maxWidth: '100%' }} />
                       </figure>
                     </div>
                     <div className="card-content">
@@ -120,7 +120,7 @@ AboutPageTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   image1: PropTypes.object,
-  // image2: PropTypes.object,
+  image22: PropTypes.object,
   // image3: PropTypes.object
 }
 
@@ -134,7 +134,7 @@ const AboutPage = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
         image1={post.frontmatter.image1}
-        // image2={post.frontmatter.image2}
+        image22={post.frontmatter.image22}
         // image3={post.frontmatter.image3}
       />
     </Layout>
@@ -143,7 +143,10 @@ const AboutPage = ({ data }) => {
 
 AboutPage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
+    title:PropTypes.string,
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
   }),
 }
 
@@ -172,6 +175,13 @@ export const aboutPageQuery = graphql`
       frontmatter {
         title
         image1 {
+          childImageSharp {
+            fluid(maxWidth: 500, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image22 {
           childImageSharp {
             fluid(maxWidth: 500, quality: 100) {
               ...GatsbyImageSharpFluid
