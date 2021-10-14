@@ -35,7 +35,7 @@ const Footer = class extends React.Component {
                       AUSTRALIA: + 61 433307656
                     </p>
                     <p>
-                      NEPAL: + 61 433938551
+                      AUSTRALIA: + 61 433938551
 
                     </p>
                   </div>
