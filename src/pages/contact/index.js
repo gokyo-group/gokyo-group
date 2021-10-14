@@ -23,6 +23,7 @@ export default class Index extends React.Component {
   }
 
   handleSubmit = (e) => {
+    console.log(this.state);
     e.preventDefault()
     const form = e.target
     fetch('/', {
@@ -180,35 +181,71 @@ export default class Index extends React.Component {
                   </div>
                   </div>
                 </div>
+                
                 <div className="column is-one-third has-text-left">
+                <form
+                      name="contact"
+                      method="post"
+                      action="/contact/thanks/"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                      onSubmit={this.handleSubmit}
+                    >
                   <div className="field">
                     <label className="label">Name</label>
                     <div className="control">
-                      <input className="input is-medium" type="text"/>
+                      <input 
+                        className="input is-medium"
+                        type={'text'}
+                        name={'name'}
+                        onChange={this.handleChange}
+                        id={'name'}
+                        required={true}
+                        />
                     </div>
                   </div>
                   <div className="field">
                     <label className="label">Phone</label>
                     <div className="control">
-                      <input className="input is-medium" type="tel"/>
+                      <input className="input is-medium" 
+                        type={'tel'}
+                        name={'tel'}
+                        onChange={this.handleChange}
+                        id={'tel'}
+                      />
                     </div>
                   </div>
                   <div className="field">
                     <label className="label">Email</label>
                     <div className="control">
-                      <input className="input is-medium" type="text"/>
+                      <input className="input is-medium"
+                       type={'email'}
+                       name={'email'}
+                       onChange={this.handleChange}
+                       id={'email'}
+                       required={true}
+                       />
                     </div>
                   </div>
                   <div className="field">
                     <label className="label">Message</label>
                     <div className="control">
-                      <textarea className="textarea is-medium"></textarea>
+                      <textarea 
+                        className="textarea is-medium"
+                        name={'message'}
+                        onChange={this.handleChange}
+                        id={'message'}
+                        required={true}
+                      >
+                      </textarea>
                     </div>
                   </div>
                   <div className="control">
                     <button type="submit" className="button is-link is-fullwidth has-text-weight-medium is-medium">Send Message</button>
                   </div>
+                  </form>
                 </div>
+                
               </div>
             </div>
           </div>

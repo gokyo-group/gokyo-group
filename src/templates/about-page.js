@@ -10,7 +10,7 @@ export const AboutPageTemplate = ({
     contentComponent, 
     image1,
     image22,
-    // image3
+    image33
    }) => {
   const PageContent = contentComponent || Content
 
@@ -89,7 +89,7 @@ export const AboutPageTemplate = ({
                   <div className="card">
                     <div className="card-image">
                       <figure className="image is-2by2">
-                        {/* <img src={!!image3.childImageSharp ? image3.childImageSharp.fluid.src : image3} style={{ maxWidth: '100%' }} /> */}
+                        <img src={!!image33.childImageSharp ? image33.childImageSharp.fluid.src : image33} style={{ maxWidth: '100%' }} />
                       </figure>
                     </div>
                     <div className="card-content">
@@ -121,7 +121,7 @@ AboutPageTemplate.propTypes = {
   contentComponent: PropTypes.func,
   image1: PropTypes.object,
   image22: PropTypes.object,
-  // image3: PropTypes.object
+  image33: PropTypes.object
 }
 
 const AboutPage = ({ data }) => {
@@ -135,7 +135,7 @@ const AboutPage = ({ data }) => {
         content={post.html}
         image1={post.frontmatter.image1}
         image22={post.frontmatter.image22}
-        // image3={post.frontmatter.image3}
+        image33={post.frontmatter.image33}
       />
     </Layout>
   )
@@ -182,6 +182,13 @@ export const aboutPageQuery = graphql`
           }
         }
         image22 {
+          childImageSharp {
+            fluid(maxWidth: 500, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image33 {
           childImageSharp {
             fluid(maxWidth: 500, quality: 100) {
               ...GatsbyImageSharpFluid
