@@ -10,7 +10,7 @@ export const ServicePageTemplate = ({
   content,
   contentComponent }) => {
   const PageContent = contentComponent || Content
-  
+
   return (
     <section className="section section--gradient"
     >
@@ -18,21 +18,21 @@ export const ServicePageTemplate = ({
         <h1 className="title is-size-2 has-text-weight-bold is-bold-light has-text-centered">
           {title}
         </h1>
-        <hr/>
+        <hr />
         <div className="columns">
           <div className="column is-7">
             <div className="section">
               <PageContent className="content" content={content} />
             </div>
-            
+
           </div>
 
           <div className="column is-5">
-            <img src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} style={{maxWidth:'100%'}}/>
+            <img src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} style={{ maxWidth: '100%' }} />
           </div>
-          
+
         </div>
-        <hr/>
+        <hr />
       </div>
     </section>
   )

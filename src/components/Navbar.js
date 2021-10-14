@@ -23,11 +23,11 @@ const Navbar = class extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
+            navBarActiveClass: 'is-active',
+          })
           : this.setState({
-              navBarActiveClass: '',
-            })
+            navBarActiveClass: '',
+          })
       }
     )
   }
@@ -35,100 +35,106 @@ const Navbar = class extends React.Component {
   render() {
     return (
       // <container>
-        <nav
-          className="navbar has-background-dark"
-          role="navigation"
-          aria-label="main-navigation"
-        > 
-          <div className="container">
-            {/* navbar brand */}
-            <div className="navbar-brand">
-              <Link to="/" className="navbar-item" title="Logo">
-                <img src={logo} alt="Gokyo" style={{ width: '160px' }} />
-              </Link>
-              {/* Hamburger menu */}
-              <div
-                className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-                data-target="navMenu"
-                onClick={() => this.toggleHamburger()}
-              >
-                <span />
-                <span />
-                <span />
-              </div>
-            </div>
+      <nav
+        className="navbar has-background-dark"
+        role="navigation"
+        aria-label="main-navigation"
+      >
+        <div className="container">
+          {/* navbar brand */}
+          <div className="navbar-brand">
+            <Link to="/" className="navbar-item" title="Logo">
+              <img src={logo} alt="Gokyo" style={{ width: '160px' }} />
+            </Link>
+            {/* Hamburger menu */}
             <div
-              id="navMenu"
-              className={`navbar-menu ${this.state.navBarActiveClass}`}
-            >
-              <div className="navbar-end has-text-left">
-                <Link className="navbar-item" to="/">
-                  Home
-                </Link>
-                <Link className="navbar-item" to="/about">
-                  About Us
-                </Link>
-                <Link className="navbar-item has-dropdown is-hoverable" to="/products">
-                  <a class="navbar-link">
-                    Services
-                  </a>
-                  <div class="navbar-dropdown has-text-centered">
-                    <Link className="navbar-item" to="/projectmanagement">
-                      Project Management
-                    </Link>
-                    <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/construction">
-                      Construction
-                    </Link>
-                    <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/design">
-                      Design
-                    </Link>
-                    <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/remedial">
-                      Remedial
-                    </Link>
-                    <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/facilitiesmanagement">
-                      Building and Facilities Management
-                    </Link>
-                    <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/valuation">
-                      Valuation
-                    </Link>
-                  </div>
-                </Link>
-                <Link className="navbar-item has-dropdown is-hoverable" to="/products">
-                  <a class="navbar-link">
+              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+              data-target="navMenu" onClick={() => this.toggleHamburger()}
+              >
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+          <div
+            id="navMenu"
+            className={`navbar-menu ${this.state.navBarActiveClass}`}
+          >
+            <div className="navbar-end has-text-left">
+              <Link id="home-navbar" className="navbar-item" to="/">
+                Home
+              </Link>
+
+              <Link id="aboutus-navbar" className="navbar-item" to="/about">
+                About Us
+              </Link>
+
+              <Link id="services-navbar" className="navbar-item has-dropdown is-hoverable" to="/products">
+                <a class="navbar-link">
+                  Services
+                </a>
+                <div class="navbar-dropdown has-text-centered">
+                  <Link id="project-navbar" className="navbar-item" to="/projectmanagement">
+                    Project Management
+                  </Link>
+                  {/* <hr class="navbar-divider" /> */}
+                  <Link id="construct-navbar" className="navbar-item" to="/construction">
+                    Construction
+                  </Link>
+                  {/* <hr class="navbar-divider" /> */}
+                  <Link id="design-navbar" className="navbar-item" to="/design">
+                    Design
+                  </Link>
+                  {/* <hr class="navbar-divider" /> */}
+                  <Link id="remedial-navbar" className="navbar-item" to="/remedial">
+                    Remedial
+                  </Link>
+                  {/* <hr class="navbar-divider" /> */}
+                  <Link id="building-navbar" className="navbar-item" to="/facilitiesmanagement">
+                    Building and Facilities Management
+                  </Link>
+                  {/* <hr class="navbar-divider" /> */}
+                  <Link id="valuation-navbar" className="navbar-item" to="/valuation">
+                    Valuation
+                  </Link>
+                </div>
+              </Link>
+
+              <Link id="portfolio-navbar" className="navbar-item has-dropdown is-hoverable" to="/products">
+                <a class="navbar-link">
                   Portfolio
-                  </a>
-                  <div class="navbar-dropdown has-text-centered">
-                    <Link className="navbar-item" to="/projectmanagement">
-                      Future Projects
-                    </Link>
-                    <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/construction">
-                      Gallery
-                    </Link>
-                    <hr class="navbar-divider"/>
-                    <Link className="navbar-item" to="/design">
-                      Project List
-                    </Link>
-                  </div>
-                </Link>
-                {/* <Link className="navbar-item" to="/contact">
+                </a>
+                <div class="navbar-dropdown has-text-centered">
+                  <Link id="future-navbar" className="navbar-item" to="/projectmanagement">
+                    Future Projects
+                  </Link>
+                  {/* <hr class="navbar-divider" /> */}
+                  <Link id="gallery-navbar" className="navbar-item" to="/construction">
+                    Gallery
+                  </Link>
+                  {/* <hr class="navbar-divider" /> */}
+                  <Link id="listproj-navbar" className="navbar-item" to="/design">
+                    Project List
+                  </Link>
+                </div>
+              </Link>
+
+              <Link id="contact-navbar" className="navbar-item" to="/contact">
+                Contact Us
+              </Link>
+              {/* <Link className="navbar-item" to="/contact">
                   <button class="button is-warning">Contact</button>
                 </Link> */}
 
-                {/* this is commented because we dont need this right now, 
+              {/* this is commented because we dont need this right now, 
                 this has link to the contact and upload page */}
 
-                {/* <Link className="navbar-item" to="/contact/examples">
+              {/* <Link className="navbar-item" to="/contact/examples">
                   Form Examples
                 </Link> */}
 
-              </div>
-              {/* <div className="navbar-end has-text-centered">
+            </div>
+            {/* <div className="navbar-end has-text-centered">
                 <a
                   className="navbar-item"
                   href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
@@ -140,9 +146,9 @@ const Navbar = class extends React.Component {
                   </span>
                 </a>
               </div> */}
-            </div>
           </div>
-        </nav>
+        </div>
+      </nav>
       // </container>
     )
   }
