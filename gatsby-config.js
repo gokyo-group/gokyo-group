@@ -1,16 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Green Innovative Research Center (GIRC) Nepal',
-    description:'We focus on a green view to develop the socioeconomic status of Nepalese people especially residing in rural area. \
-    climate change and environmental protection, high value agriculture products \
-    and its marketing, water, sanitation and hygiene (WASH), renewable energy technology, \
-    climate change, cooperative management, institutional development, social mobilization, \
-    women and child rights and health. \
-    Flood, natural, disaster, prevention, forests, green energy, sustainability, gorkha nepal, \
-    dhading nepal, Palungtar Gorkha Nepal. \
-    GREEN Innovative Research Center ( GIRC Nepal) greenircnepal.org, Kathmandu-14, Kalanki. \
-    Kochi University, Japan, JICA, aid, affiliation \
-    development, disaster prevention',
+    title: 'Gokyo Group Nepal',
+    description:'Gokyo Group Construction, Remedial, Real estate, land, house, residential, hostipal, building, contruction, supplier, building management, buy home, ',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

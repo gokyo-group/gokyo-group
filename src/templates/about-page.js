@@ -56,10 +56,10 @@ export const AboutPageTemplate = ({
                         </div>
                       </div>
 
-                      <div className="content">
+                      {/* <div className="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                         <a href="#">linkedIn/facebook/twitter</a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -77,10 +77,10 @@ export const AboutPageTemplate = ({
                           <p className="subtitle is-6">CONSULTANT</p>
                         </div>
                       </div>
-                      <div className="content">
+                      {/* <div className="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                         <a href="#">linkedIn/facebook/twitter</a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -99,10 +99,10 @@ export const AboutPageTemplate = ({
                           <p className="subtitle is-6">CONSULTANT</p>
                         </div>
                       </div>
-                      <div className="content">
+                      {/* <div className="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                         <a href="#">linkedIn/facebook/twitter</a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -150,21 +150,6 @@ AboutPage.propTypes = {
   }),
 }
 
-
-// image2 {
-//   childImageSharp {
-//     fluid(maxWidth: 500, quality: 100) {
-//       ...GatsbyImageSharpFluid
-//     }
-//   }
-// }
-// image3 {
-//   childImageSharp {
-//     fluid(maxWidth: 500, quality: 100) {
-//       ...GatsbyImageSharpFluid
-//     }
-//   }
-// }
 
 export default AboutPage
 

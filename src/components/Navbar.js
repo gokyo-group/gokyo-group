@@ -105,7 +105,7 @@ const Navbar = class extends React.Component {
                   Portfolio
                 </a>
                 <div class="navbar-dropdown has-text-centered">
-                  <Link id="future-navbar" className="navbar-item" to="/projectmanagement">
+                  <Link id="future-navbar" className="navbar-item" to="/products">
                     Future Projects
                   </Link>
                   {/* <hr class="navbar-divider" /> */}
@@ -113,7 +113,7 @@ const Navbar = class extends React.Component {
                     Gallery
                   </Link>
                   {/* <hr class="navbar-divider" /> */}
-                  <Link id="listproj-navbar" className="navbar-item" to="/design">
+                  <Link id="listproj-navbar" className="navbar-item" to="/products">
                     Project List
                   </Link>
                 </div>
