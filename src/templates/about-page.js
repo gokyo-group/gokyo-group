@@ -56,10 +56,10 @@ export const AboutPageTemplate = ({
                         </div>
                       </div>
 
-                      {/* <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">linkedIn/facebook/twitter</a>
-                      </div> */}
+                      <div className="content">
+                        <em>Bachelor of Civil Engineering, Nepal</em>
+                        {/* <a href="#">linkedIn/facebook/twitter</a> */}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -77,10 +77,10 @@ export const AboutPageTemplate = ({
                           <p className="subtitle is-6">CONSULTANT</p>
                         </div>
                       </div>
-                      {/* <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">linkedIn/facebook/twitter</a>
-                      </div> */}
+                      <div className="content">
+                        <em>Bachelor of Civil Engineering, Australia</em>
+                        {/* <a href="#">linkedIn/facebook/twitter</a> */}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -99,10 +99,11 @@ export const AboutPageTemplate = ({
                           <p className="subtitle is-6">CONSULTANT</p>
                         </div>
                       </div>
-                      {/* <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">linkedIn/facebook/twitter</a>
-                      </div> */}
+                      <div className="content">
+                        <p><em>Bachelor of Civil Engineering, Nepal</em></p>
+                        <p><em>Master of Engineering (Civil), Australia</em></p>
+                        {/* <a href="#">linkedIn/facebook/twitter</a> */}
+                      </div>
                     </div>
                   </div>
                 </div>

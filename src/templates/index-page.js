@@ -1,9 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+import { useHistory } from 'react-router-dom';
 
-import Layout from '../components/Layout'
-import SectorDisplay from '../components/SectorDisplay'
+import Layout from '../components/Layout';
+import NavbarComponent from '../components/NavbarComponent';
+import SectorDisplay from '../components/SectorDisplay';
 
 export const IndexPageTemplate = ({
   image,
@@ -12,6 +14,9 @@ export const IndexPageTemplate = ({
   image3,
   title,
   mainpitch,
+  aboutRoute,
+  serviceRoute,
+  portfolioRoute
 }) => (
       <div className="container">
           <section className="hero">
@@ -55,7 +60,7 @@ export const IndexPageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                     <img src={!!image12.image.childImageSharp ? image12.image.childImageSharp.fluid.src : image12.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay" onClick={()=>{window.location.href='/about'}}>
+                  <div className="overlay" onClick={aboutRoute}>
                     <div id="textHover"><h1 className="has-text-white">{image12.alt}</h1></div>
                   </div>
                 </div>
@@ -66,7 +71,7 @@ export const IndexPageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                   <img src={!!image2.image.childImageSharp ? image2.image.childImageSharp.fluid.src : image2.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
+                  <div className="overlay" onClick={serviceRoute}>
                     <div id="textHover"><h1 className="has-text-white">{image2.alt}</h1></div>
                   </div>
                 </div>
@@ -77,7 +82,7 @@ export const IndexPageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                     <img src={!!image3.image.childImageSharp ? image3.image.childImageSharp.fluid.src : image3.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
+                  <div className="overlay" onClick={portfolioRoute}>
                     <div id="textHover"><h1 className="has-text-white">{image3.alt}</h1></div>
                   </div>
                 </div>
@@ -104,7 +109,23 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
+  const history = useHistory();
+
+  const aboutRoute = () =>{ 
+    history.push("/about");
+  }
+
+  const serviceRoute = () =>{ 
+    history.push("/service");
+  }
+
+  const portfolioRoute = () =>{ 
+    history.push("/portfolio");
+  }
+
   return (
+    <div>
+    {/* <NavbarComponent/> */}
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
@@ -113,8 +134,12 @@ const IndexPage = ({ data }) => {
         image12={frontmatter.image12}
         image2={frontmatter.image2}
         image3={frontmatter.image3}
+        aboutRoute={aboutRoute}
+        serviceRoute={serviceRoute}
+        portfolioRoute={portfolioRoute}
       />
     </Layout>
+    </div>
   )
 }
 

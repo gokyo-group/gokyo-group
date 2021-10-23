@@ -27,7 +27,7 @@ const Footer = class extends React.Component {
               <div className="column is-two-thirds">
                 <div className="columns">
                   <div className="column is-4 social">
-                    <h2 className="has-text-danger">Contact us</h2>
+                    <h2 className="has-text-red">Contact us</h2>
                     <p>
                       NEPAL: +977 9801969003
                     </p>
@@ -40,12 +40,12 @@ const Footer = class extends React.Component {
                     </p>
                   </div>
                   <div className="column is-4 social">
-                    <h2 className="has-text-danger">Offices</h2>
+                    <h2 className="has-text-red">Offices</h2>
                     <p>KATHMANDU, NEPAL</p>
                     <p>SYDNEY, AUSTRALIA</p>
                   </div>
                   <div className="column is-4 social">
-                    <h2 className="has-text-danger">Connect with us</h2>
+                    <h2 className="has-text-red">Connect with us</h2>
                     <a title="facebook" href="https://facebook.com">
                       <img
                         src={facebook}
