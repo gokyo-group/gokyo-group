@@ -112,15 +112,15 @@ const IndexPage = ({ data }) => {
   const history = useHistory();
 
   const aboutRoute = () =>{ 
-    history.push("/about");
+    window.location.href = '/about';
   }
 
   const serviceRoute = () =>{ 
-    history.push("/service");
+    window.location.href = '/service';
   }
 
   const portfolioRoute = () =>{ 
-    history.push("/portfolio");
+    window.location.href = '/portfolio';
   }
 
   return (

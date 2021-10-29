@@ -11,26 +11,27 @@ const NavbarComponent = class extends React.Component {
 
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{top:'0', width:'100%' }}>
         <Container>
 
         <Navbar.Brand href="/">
             <img src={logo} alt="Gokyo" style={{ width: '160px' }} />
+
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
-          <Navbar.Collapse id="responsive-navbar-nav" >
+
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="/"> Home </Nav.Link>
-              <Nav.Link href="/about">About us</Nav.Link>
+              <Nav.Link href="/" style={{ color:'#ff0000' }}> Home </Nav.Link>
+              <Nav.Link href="/about" style={{ color:'#ff0000' }}>About us</Nav.Link>
 
               <NavDropdown title="Services" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="/projectmanagement"> Project Management </NavDropdown.Item>
                 <NavDropdown.Item href="/construction"> Construction </NavDropdown.Item>
-                <NavDropdown.Item href="/design">Design</NavDropdown.Item>
-                
-                <NavDropdown.Item href="/remedial">Remedial</NavDropdown.Item>
-                <NavDropdown.Item href="/facilitiesmanagement">Building and Facilities Management</NavDropdown.Item>
-                <NavDropdown.Item href="/valuation">Valuation</NavDropdown.Item>
+                <NavDropdown.Item href="/design"> Design </NavDropdown.Item>
+                <NavDropdown.Item href="/remedial"> Remedial </NavDropdown.Item>
+                <NavDropdown.Item href="/facilitiesmanagement"> Building and Facilities Management </NavDropdown.Item>
+                <NavDropdown.Item href="/valuation"> Valuation </NavDropdown.Item>
               </NavDropdown>
 
               <NavDropdown title="Portfolio" id="collasible-nav-dropdown">
@@ -39,10 +40,8 @@ const NavbarComponent = class extends React.Component {
                 <NavDropdown.Item href="/gallery"> Gallery </NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link href="/contact">Contact us</Nav.Link>
-
-            </Nav>
-
+              <Nav.Link href="/contact" style={{ color:'#ff0000' }}>Contact us</Nav.Link>
+              </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
