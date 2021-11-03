@@ -116,7 +116,7 @@ const IndexPage = ({ data }) => {
   }
 
   const serviceRoute = () =>{ 
-    window.location.href = '/service';
+    window.location.href = '/services';
   }
 
   const portfolioRoute = () =>{ 
