@@ -1,4 +1,4 @@
-# Green Innovative Research Center Nepal Website
+# Gokyo Group Website in Gatsby+NetlifyCMS
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/26e38338-12bc-4fce-9704-fae0c032756e/deploy-status)](https://app.netlify.com/sites/agitated-jang-846559/deploys)
 

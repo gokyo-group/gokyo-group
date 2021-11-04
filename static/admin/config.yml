@@ -10,8 +10,8 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-site_url: https://greenircnepal.org/
-display_url: https://greenircnepal.org/
+site_url: https://gokyogroup.com/
+display_url: https://gokyogroup.com/
 
 collections:
   - name: "blog"
