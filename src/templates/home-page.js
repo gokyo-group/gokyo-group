@@ -14,13 +14,50 @@ export const HomePageTemplate = ({
   image3,
   title,
   mainpitch,
-  aboutRoute,
-  serviceRoute,
-  portfolioRoute
+  homeRoute,
+  constructionRoute,
+  realestateRoute
 }) => (
-        <div className="container">
-            hello
+  <div className="content">
+    {/* <div
+      className="full-width-image-container margin-top-0"
+      style={{
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
+      }}
+    >
+      <h2
+        className="has-text-weight-bold is-size-1"
+        style={{
+          color: 'white',
+          padding: '1rem',
+        }}
+      >
+        {title}
+      </h2>
+    </div> */}
+    <section className="section section--gradient">
+      <div>
+        <div className="columns">
+          <div className="column is-half is-offset-one-quarter" onClick={homeRoute}>
+            <img src={!!image12.image.childImageSharp ? image12.image.childImageSharp.fluid.src : image12.image} style={{maxWidth:'100%',margin:'auto', display:'block'}}/>
+          </div>
         </div>
+        <hr/>
+        <div className="columns is-mobile">
+          
+          <div className="column" onClick={realestateRoute}>
+            <img src={!!image2.image.childImageSharp ? image2.image.childImageSharp.fluid.src : image2.image} style={{maxWidth:'100%',margin:'auto', display:'block'}}/>
+          </div>
+
+          <div className="column" onClick={constructionRoute}>
+            <img src={!!image3.image.childImageSharp ? image3.image.childImageSharp.fluid.src : image3.image} style={{maxWidth:'100%',margin:'auto', display:'block'}}/>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 )
 
 HomePageTemplate.propTypes = {
@@ -37,22 +74,22 @@ const HomePage = ({ data }) => {
 
   const history = useHistory();
 
-  const aboutRoute = () =>{ 
-    window.location.href = '/about';
+  const homeRoute = () =>{ 
+    window.location.href = '/';
   }
 
-  const serviceRoute = () =>{ 
-    window.location.href = '/service';
+  const constructionRoute = () =>{ 
+    window.location.href = '/construction';
   }
 
-  const portfolioRoute = () =>{ 
-    window.location.href = '/portfolio';
+  const realestateRoute = () =>{ 
+    window.location.href = '/realestate';
   }
 
   return (
     <div>
     {/* <NavbarComponent/> */}
-    <Layout>
+    {/* <Layout> */}
       <HomePageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -60,11 +97,11 @@ const HomePage = ({ data }) => {
         image12={frontmatter.image12}
         image2={frontmatter.image2}
         image3={frontmatter.image3}
-        aboutRoute={aboutRoute}
-        serviceRoute={serviceRoute}
-        portfolioRoute={portfolioRoute}
+        homeRoute={homeRoute}
+        constructionRoute={constructionRoute}
+        realestateRoute={realestateRoute}
       />
-    </Layout>
+    {/* </Layout> */}
     </div>
   )
 }

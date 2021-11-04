@@ -1,6 +1,6 @@
 ---
 templateKey: home-page
-title: Gokyo Group Construction
+title: Gokyo Group
 image: /img/landing.jpg
 mainpitch:
   title: BUILDING THE FUTURE

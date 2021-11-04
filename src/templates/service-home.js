@@ -11,7 +11,13 @@ export const ServiceHomePageTemplate = ({
   service3,
   service4,
   service5,
-  service6
+  service6,
+  pmRoute,
+  constructRoute,
+  designRoute,
+  remedialRoute,
+  facilitiesmanageRoute,
+  valuationRoute
 }) => (
   <div className="content">
     <div
@@ -49,7 +55,7 @@ export const ServiceHomePageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                     <img src={!!service1.image.childImageSharp ? service1.image.childImageSharp.fluid.src : service1.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
+                  <div className="overlay" onClick={pmRoute}>
                     <div id="textHover"><h1 className="has-text-white" style={{ textShadow:'1px 1px 2px black, 0 0 25px red, 0 0 5px black'}}>{service1.title}</h1></div>
                   </div>
                 </div>
@@ -60,7 +66,7 @@ export const ServiceHomePageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                   <img src={!!service2.image.childImageSharp ? service2.image.childImageSharp.fluid.src : service2.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
+                  <div className="overlay" onClick={constructRoute}>
                     <div id="textHover"><h1 className="has-text-white" style={{ textShadow:'1px 1px 2px black, 0 0 25px red, 0 0 5px black'}}>{service2.title}</h1></div>
                   </div>
                 </div>
@@ -71,7 +77,7 @@ export const ServiceHomePageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                     <img src={!!service3.image.childImageSharp ? service3.image.childImageSharp.fluid.src : service3.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
+                  <div className="overlay" onClick={designRoute}>
                     <div id="textHover"><h1 className="has-text-white" style={{ textShadow:'1px 1px 2px black, 0 0 25px red, 0 0 5px black'}}>{service3.title}</h1></div>
                   </div>
                 </div>
@@ -84,7 +90,7 @@ export const ServiceHomePageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                     <img src={!!service4.image.childImageSharp ? service4.image.childImageSharp.fluid.src : service4.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
+                  <div className="overlay" onClick={remedialRoute}>
                     <div id="textHover"><h1 className="has-text-white" style={{ textShadow:'1px 1px 2px black, 0 0 25px red, 0 0 5px black'}}>{service4.title}</h1></div>
                   </div>
                 </div>
@@ -95,7 +101,7 @@ export const ServiceHomePageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                   <img src={!!service5.image.childImageSharp ? service5.image.childImageSharp.fluid.src : service5.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
+                  <div className="overlay" onClick={facilitiesmanageRoute}>
                     <div id="textHover"><h1 className="has-text-white" style={{ textShadow:'1px 1px 2px black, 0 0 25px red, 0 0 5px black'}}>{service5.title}</h1></div>
                   </div>
                 </div>
@@ -106,7 +112,7 @@ export const ServiceHomePageTemplate = ({
                   <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
                     <img src={!!service6.image.childImageSharp ? service6.image.childImageSharp.fluid.src : service6.image} style={{maxWidth:'100%'}}/>
                   </figure>
-                  <div className="overlay">
+                  <div className="overlay" onClick={valuationRoute}>
                     <div id="textHover"><h1 className="has-text-white" style={{ textShadow:'1px 1px 2px black, 0 0 25px red, 0 0 5px black'}}>{service6.title}</h1></div>
                   </div>
                 </div>
@@ -127,6 +133,30 @@ ServiceHomePageTemplate.propTypes = {
 const ServiceHomePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
+  const pmRoute = () =>{ 
+    window.location.href = '/projectmanagement';
+  }
+
+  const constructRoute = () =>{ 
+    window.location.href = '/construction';
+  }
+
+  const designRoute = () =>{ 
+    window.location.href = '/design';
+  }
+
+  const remedialRoute = () =>{ 
+    window.location.href = '/remedial';
+  }
+
+  const facilitiesmanageRoute = () =>{ 
+    window.location.href = '/facilitiesmanagement';
+  }
+
+  const valuationRoute = () =>{ 
+    window.location.href = '/valuation';
+  }
+
   return (
     <Layout>
       <ServiceHomePageTemplate
@@ -138,6 +168,12 @@ const ServiceHomePage = ({ data }) => {
         service4={frontmatter.service4}
         service5={frontmatter.service5}
         service6={frontmatter.service6}
+        pmRoute={pmRoute}
+        constructRoute={constructRoute}
+        designRoute={designRoute}
+        remedialRoute={remedialRoute}
+        facilitiesmanageRoute={facilitiesmanageRoute}
+        valuationRoute={valuationRoute}
       />
     </Layout>
   )
