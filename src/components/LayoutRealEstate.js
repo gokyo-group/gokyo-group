@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import Footer from '../components/Footer';
 import NavbarRealEstateComponent from './NavbarRealEstateComponent';
 import './all.sass';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 

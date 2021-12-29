@@ -1,11 +1,12 @@
 //post display which will be similar to blog post display
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { kebabCase } from 'lodash';
+import { Helmet } from 'react-helmet';
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
+import SlickImageSlider from '../components/SlickImageSlider';
 
 export const ListingPostTemplate = ({
   content,
@@ -14,6 +15,9 @@ export const ListingPostTemplate = ({
   tags,
   title,
   helmet,
+  info,
+  imageListId,
+  featuredpost
 }) => {
   const PostContent = contentComponent || Content
 
@@ -28,6 +32,7 @@ export const ListingPostTemplate = ({
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
+            <SlickImageSlider imageListId={imageListId}/>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -65,7 +70,7 @@ const ListingPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet titleTemplate="%s | Buy | Listing">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
@@ -75,6 +80,9 @@ const ListingPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        info={post.frontmatter.info}
+        imageListId={post.frontmatter.imageListId}
+        featuredpost={post.frontmatter.featuredpost}
       />
     </Layout>
   )
@@ -98,6 +106,18 @@ export const pageQuery = graphql`
         title
         description
         tags
+        info {
+          location
+          type
+          listing
+          bedroom
+          bathroom
+          floor
+          landsize
+          price
+        }
+        featuredpost
+        imageListId
       }
     }
   }
