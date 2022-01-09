@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
+import LayoutRealEstate from '../components/LayoutRealEstate';
 import Content, { HTMLContent } from '../components/Content';
 import SlickImageSlider from '../components/SlickImageSlider';
+import ListingInfo from '../components/ListingInfo';
 
 export const ListingPostTemplate = ({
   content,
@@ -31,8 +32,12 @@ export const ListingPostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
-            <PostContent content={content} />
             <SlickImageSlider imageListId={imageListId}/>
+            <ListingInfo info={info}/>
+            <br/>
+            <div className='container is-italic'>
+              <PostContent content={content} />
+            </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -64,7 +69,7 @@ const ListingPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
+    <LayoutRealEstate>
       <ListingPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -84,7 +89,7 @@ const ListingPost = ({ data }) => {
         imageListId={post.frontmatter.imageListId}
         featuredpost={post.frontmatter.featuredpost}
       />
-    </Layout>
+    </LayoutRealEstate>
   )
 }
 
@@ -109,7 +114,6 @@ export const pageQuery = graphql`
         info {
           location
           type
-          listing
           bedroom
           bathroom
           floor

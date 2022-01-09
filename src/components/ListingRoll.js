@@ -10,9 +10,13 @@ class ListingRoll extends React.Component {
 
     return (
       <div className="columns is-multiline">
+
+        {/* this map is for featured listings */}
+
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
+            post.frontmatter.featuredpost?
+            <div className="is-parent column is-4" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box notification ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
@@ -29,7 +33,9 @@ class ListingRoll extends React.Component {
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta">
+                  
+                </header>
+                <p className="post-meta">
                     <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
@@ -37,19 +43,72 @@ class ListingRoll extends React.Component {
                       {post.frontmatter.title}
                     </Link>
                     <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
+                    <span className="subtitle is-size-7 is-block">
                       {post.frontmatter.date}
                     </span>
                   </p>
-                </header>
-                <p>
+                {/* <p>
                   {post.excerpt}
                   <br />
                   <br />
                   <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
+                    View Listing →
                   </Link>
-                </p>
+                </p> */}
+              </article>
+            </div>
+            :
+            <div></div>
+          ))}
+          
+          
+          {/* this map is for normal unfeatured Listing */}
+
+
+          {posts &&
+          posts.map(({ node: post }) => (
+            post.frontmatter.featuredpost?
+            <div></div>
+            :
+            <div className="is-parent column is-4" key={post.id}>
+              <article
+                className={`blog-list-item tile is-child box notification ${
+                  post.frontmatter.featuredpost ? 'is-featured' : ''
+                }`}
+              >
+                <header>
+                  {post.frontmatter.featuredimage ? (
+                    <div className="featured-thumbnail">
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: post.frontmatter.featuredimage,
+                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                  
+                </header>
+                <p className="post-meta">
+                    <Link
+                      className="title has-text-primary is-size-4"
+                      to={post.fields.slug}
+                    >
+                      {post.frontmatter.title}
+                    </Link>
+                    <span> &bull; </span>
+                    <span className="subtitle is-size-7 is-block">
+                      {post.frontmatter.date}
+                    </span>
+                  </p>
+                {/* <p>
+                  {post.excerpt}
+                  <br />
+                  <br />
+                  <Link className="button" to={post.fields.slug}>
+                    View Listing →
+                  </Link>
+                </p> */}
               </article>
             </div>
           ))}

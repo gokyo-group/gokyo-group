@@ -22,10 +22,10 @@ const NavbarRealEstateComponent = class extends React.Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="/realestate" style={{ color:'#ff0000' }}> Home </Nav.Link>
-              <Nav.Link href="/realestate/buy" style={{ color:'#ff0000' }}>Buy</Nav.Link>
-              <Nav.Link href="/realestate/sell" style={{ color:'#ff0000' }}>Sell</Nav.Link>
-              <Nav.Link href="/contact" style={{ color:'#ff0000' }}>Contact us</Nav.Link>
+              {/* <Nav.Link href="/realestate" style={{ color:'#ff0000' }}> Home </Nav.Link> */}
+              <Nav.Link href="/buy" style={{ color:'#ff0000' }}>Buy</Nav.Link>
+              <Nav.Link href="/sell" style={{ color:'#ff0000' }}>Sell</Nav.Link>
+              <Nav.Link href="/realestate/contact" style={{ color:'#ff0000' }}>Contact us/ Request a call back</Nav.Link>
               </Nav>
           </Navbar.Collapse>
         </Container>
