@@ -26,7 +26,6 @@ export const ListingPostTemplate = ({
   const PostContent = contentComponent || Content
   const [location, setLocation] = useState("https://gokyogroup.com/");
 
-  console.log(useLocation().href);
   return (
     <section className="section">
       {helmet || ''}
@@ -45,7 +44,7 @@ export const ListingPostTemplate = ({
             </div>
             <div style={{ marginTop: `4rem` }}>
                 <h4>Share on Social Media:</h4>
-                <FacebookShareButton url={useLocation().href}>
+                {/* <FacebookShareButton url={useLocation().href}>
                   <FacebookIcon size={36} round={true}/>
                 </FacebookShareButton>
                 <FacebookMessengerShareButton url={useLocation().href}>
@@ -56,7 +55,7 @@ export const ListingPostTemplate = ({
                 </WhatsappShareButton>
                 <EmailShareButton url={useLocation().href}>
                   <EmailIcon size={36} round={true}/>
-                </EmailShareButton>
+                </EmailShareButton> */}
             </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
