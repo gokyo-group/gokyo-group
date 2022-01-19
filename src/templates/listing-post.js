@@ -1,9 +1,12 @@
 //post display which will be similar to blog post display
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
+import {FacebookShareButton, FacebookMessengerShareButton, WhatsappShareButton, EmailShareButton} from 'react-share';
+import {FacebookIcon, FacebookMessengerIcon, WhatsappIcon, EmailIcon} from 'react-share';
+import { useLocation } from '@reach/router';
 import LayoutRealEstate from '../components/LayoutRealEstate';
 import Content, { HTMLContent } from '../components/Content';
 import SlickImageSlider from '../components/SlickImageSlider';
@@ -21,7 +24,9 @@ export const ListingPostTemplate = ({
   featuredpost
 }) => {
   const PostContent = contentComponent || Content
+  const [location, setLocation] = useState("https://gokyogroup.com/");
 
+  console.log(useLocation().href);
   return (
     <section className="section">
       {helmet || ''}
@@ -37,6 +42,21 @@ export const ListingPostTemplate = ({
             <br/>
             <div className='container is-italic'>
               <PostContent content={content} />
+            </div>
+            <div style={{ marginTop: `4rem` }}>
+                <h4>Share on Social Media:</h4>
+                <FacebookShareButton url={useLocation().href}>
+                  <FacebookIcon size={36} round={true}/>
+                </FacebookShareButton>
+                <FacebookMessengerShareButton url={useLocation().href}>
+                  <FacebookMessengerIcon size={36} round={true}/>
+                </FacebookMessengerShareButton>
+                <WhatsappShareButton url={useLocation().href}>
+                  <WhatsappIcon size={36} round={true}/>
+                </WhatsappShareButton>
+                <EmailShareButton url={useLocation().href}>
+                  <EmailIcon size={36} round={true}/>
+                </EmailShareButton>
             </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>

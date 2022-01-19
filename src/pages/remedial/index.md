@@ -33,7 +33,7 @@ blurb45:
 - Concrete Repair
 - Masonary Render Repair
 - Coatings
-- Cladding and Windoe/door Replacements
+- Cladding and Window/door Replacements
 - Balustrade Repairs/ Replacements
 - Balcony Upgrades
 - Joint Sealing
