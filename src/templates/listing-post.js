@@ -24,7 +24,7 @@ export const ListingPostTemplate = ({
   featuredpost
 }) => {
   const PostContent = contentComponent || Content
-  const [location, setLocation] = useState("https://gokyogroup.com/");
+  // const [location, setLocation] = useState("https://gokyogroup.com/");
 
   return (
     <section className="section">
