@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Layout from '../components/Layout';
 import NavbarComponent from '../components/NavbarComponent';
 import SectorDisplay from '../components/SectorDisplay';
+import "../components/homepage.sass";
 
 export const HomePageTemplate = ({
   image,
@@ -40,18 +41,18 @@ export const HomePageTemplate = ({
     <section className="section section--gradient">
       <div>
         <div className="columns">
-          <div className="column is-half is-offset-one-quarter" onClick={homeRoute}>
+          <div className="column is-half is-offset-one-quarter homepage-main" onClick={homeRoute}>
             <img src={!!image12.image.childImageSharp ? image12.image.childImageSharp.fluid.src : image12.image} style={{maxWidth:'100%',margin:'auto', display:'block'}}/>
           </div>
         </div>
         <hr/>
         <div className="columns is-mobile">
           
-          <div className="column" onClick={realestateRoute}>
+          <div className="column homepage-org" onClick={realestateRoute}>
             <img src={!!image2.image.childImageSharp ? image2.image.childImageSharp.fluid.src : image2.image} style={{maxWidth:'100%',margin:'auto', display:'block'}}/>
           </div>
 
-          <div className="column" onClick={constructionRoute}>
+          <div className="column homepage-org" onClick={constructionRoute}>
             <img src={!!image3.image.childImageSharp ? image3.image.childImageSharp.fluid.src : image3.image} style={{maxWidth:'100%',margin:'auto', display:'block'}}/>
           </div>
         </div>
@@ -79,11 +80,11 @@ const HomePage = ({ data }) => {
   }
 
   const constructionRoute = () =>{ 
-    window.location.href = '/construction';
+    window.location.href = '/';
   }
 
   const realestateRoute = () =>{ 
-    window.location.href = '/realestate';
+    window.location.href = '/buy';
   }
 
   return (

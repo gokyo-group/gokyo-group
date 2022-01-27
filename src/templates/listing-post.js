@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
-// import {FacebookShareButton, FacebookMessengerShareButton, WhatsappShareButton, EmailShareButton} from 'react-share';
-// import {FacebookIcon, FacebookMessengerIcon, WhatsappIcon, EmailIcon} from 'react-share';
-// import { useLocation } from '@reach/router';
+import {FacebookShareButton, FacebookMessengerShareButton, WhatsappShareButton, EmailShareButton} from 'react-share';
+import {FacebookIcon, FacebookMessengerIcon, WhatsappIcon, EmailIcon} from 'react-share';
+import { useLocation } from '@reach/router';
 import LayoutRealEstate from '../components/LayoutRealEstate';
 import Content, { HTMLContent } from '../components/Content';
 import SlickImageSlider from '../components/SlickImageSlider';
@@ -24,7 +24,7 @@ export const ListingPostTemplate = ({
   featuredpost
 }) => {
   const PostContent = contentComponent || Content
-  // const [location, setLocation] = useState("https://gokyogroup.com/");
+  const [location, setLocation] = useState("https://gokyogroup.com/");
 
   return (
     <section className="section">
@@ -44,18 +44,16 @@ export const ListingPostTemplate = ({
             </div>
             <div style={{ marginTop: `4rem` }}>
                 <h4>Share on Social Media:</h4>
-                {/* <FacebookShareButton url={useLocation().href}>
+                {console.log(useLocation())}
+                <FacebookShareButton url={location+useLocation().pathname}>
                   <FacebookIcon size={36} round={true}/>
                 </FacebookShareButton>
-                <FacebookMessengerShareButton url={useLocation().href}>
-                  <FacebookMessengerIcon size={36} round={true}/>
-                </FacebookMessengerShareButton>
-                <WhatsappShareButton url={useLocation().href}>
+                <WhatsappShareButton url={location+useLocation().pathname}>
                   <WhatsappIcon size={36} round={true}/>
                 </WhatsappShareButton>
-                <EmailShareButton url={useLocation().href}>
+                <EmailShareButton url={location+useLocation().pathname}>
                   <EmailIcon size={36} round={true}/>
-                </EmailShareButton> */}
+                </EmailShareButton>
             </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -88,7 +86,7 @@ const ListingPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <LayoutRealEstate>
+    <LayoutRealEstate title={post.frontmatter.title} description={post.frontmatter.description}>
       <ListingPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -100,6 +98,10 @@ const ListingPost = ({ data }) => {
               name="description"
               content={`${post.frontmatter.description}`}
             />
+            <meta
+              property="og:image"
+              content={post.frontmatter.featuredimage}
+            />
           </Helmet>
         }
         tags={post.frontmatter.tags}
@@ -107,6 +109,7 @@ const ListingPost = ({ data }) => {
         info={post.frontmatter.info}
         imageListId={post.frontmatter.imageListId}
         featuredpost={post.frontmatter.featuredpost}
+        featuredimage={post.frontmatter.featuredimage}
       />
     </LayoutRealEstate>
   )
@@ -141,6 +144,13 @@ export const pageQuery = graphql`
         }
         featuredpost
         imageListId
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 120, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
