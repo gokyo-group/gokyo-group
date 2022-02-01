@@ -1,9 +1,9 @@
 import React from 'react'
 
 import LayoutRealEstate from '../../components/LayoutRealEstate'
-import ListingRoll from '../../components/ListingRoll'
+import RentRoll from '../../components/RentRoll'
 
-export default class ListingIndexPage extends React.Component {
+export default class RentIndexPage extends React.Component {
   render() {
     return (
       <LayoutRealEstate>
@@ -28,7 +28,7 @@ export default class ListingIndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <ListingRoll />
+              <RentRoll />
             </div>
           </div>
         </section>

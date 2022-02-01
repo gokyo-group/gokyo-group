@@ -16,4 +16,13 @@ image2:
 image3:
   alt: Portfolio
   image: /img/portfolio.jpg
+groupLogo:
+  alt: Gokyo group logo
+  image: /img/group-logo.jpg
+realEstateLogo:
+  alt: Real Estate website
+  image: /img/realestate-logo.jpg
+constructionLogo:
+  alt: Construction Website
+  image: /img/construction-logo.jpg
 ---

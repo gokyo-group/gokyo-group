@@ -6,12 +6,18 @@ import { useHistory } from 'react-router-dom';
 import Layout from '../components/Layout';
 import NavbarComponent from '../components/NavbarComponent';
 import SectorDisplay from '../components/SectorDisplay';
+import HomePageModal from '../components/HomePageModal';
 
 export const IndexPageTemplate = ({
   image,
   image12,
   image2,
   image3,
+  groupLogo,
+  constructionLogo,
+  realEstateLogo,
+  realEstateRoute,
+  constructionRoute,
   title,
   mainpitch,
   aboutRoute,
@@ -52,48 +58,55 @@ export const IndexPageTemplate = ({
           </section>
 
           <section className="section section--gradient">
-          <div className="container has-text-centered">
-          <div className="content">
-            <div className="columns is-centered">
-              <div className="column">
+            <div className="container has-text-centered">
+            <div className="content">
+              <div className="columns is-centered">
+                <div className="column">
+                  <div className="hover01 simplecontainer">
+                    <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
+                      <img src={!!image12.image.childImageSharp ? image12.image.childImageSharp.fluid.src : image12.image} style={{maxWidth:'100%'}}/>
+                    </figure>
+                    <div className="overlay" onClick={aboutRoute}>
+                      <div id="textHover"><h1 className="has-text-white">{image12.alt}</h1></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="column">
                 <div className="hover01 simplecontainer">
-                  <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src={!!image12.image.childImageSharp ? image12.image.childImageSharp.fluid.src : image12.image} style={{maxWidth:'100%'}}/>
-                  </figure>
-                  <div className="overlay" onClick={aboutRoute}>
-                    <div id="textHover"><h1 className="has-text-white">{image12.alt}</h1></div>
+                    <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
+                    <img src={!!image2.image.childImageSharp ? image2.image.childImageSharp.fluid.src : image2.image} style={{maxWidth:'100%'}}/>
+                    </figure>
+                    <div className="overlay" onClick={serviceRoute}>
+                      <div id="textHover"><h1 className="has-text-white">{image2.alt}</h1></div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="column">
-              <div className="hover01 simplecontainer">
-                  <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                  <img src={!!image2.image.childImageSharp ? image2.image.childImageSharp.fluid.src : image2.image} style={{maxWidth:'100%'}}/>
-                  </figure>
-                  <div className="overlay" onClick={serviceRoute}>
-                    <div id="textHover"><h1 className="has-text-white">{image2.alt}</h1></div>
+                <div className="column">
+                <div className="hover01 simplecontainer">
+                    <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
+                      <img src={!!image3.image.childImageSharp ? image3.image.childImageSharp.fluid.src : image3.image} style={{maxWidth:'100%'}}/>
+                    </figure>
+                    <div className="overlay" onClick={portfolioRoute}>
+                      <div id="textHover"><h1 className="has-text-white">{image3.alt}</h1></div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="column">
-              <div className="hover01 simplecontainer">
-                  <figure className="mb-0 m-0 mt-0 mr-0 ml-0">
-                    <img src={!!image3.image.childImageSharp ? image3.image.childImageSharp.fluid.src : image3.image} style={{maxWidth:'100%'}}/>
-                  </figure>
-                  <div className="overlay" onClick={portfolioRoute}>
-                    <div id="textHover"><h1 className="has-text-white">{image3.alt}</h1></div>
-                  </div>
-                </div>
               </div>
-
             </div>
-          </div>
-          </div>
+            </div>
           </section>
           <hr/>
           <SectorDisplay/>
+          <HomePageModal 
+          groupLogo={groupLogo}
+          constructionLogo={constructionLogo}
+          realEstateLogo={realEstateLogo}
+          realEstateRoute={realEstateRoute}
+          constructionRoute={constructionRoute}
+        />
     </div>
 )
 
@@ -123,6 +136,14 @@ const IndexPage = ({ data }) => {
     window.location.href = '/portfolio';
   }
 
+  const constructionRoute = () =>{ 
+    window.location.href = '/';
+  }
+
+  const realEstateRoute = () =>{ 
+    window.location.href = '/buy';
+  }
+
   return (
     <div>
     {/* <NavbarComponent/> */}
@@ -134,6 +155,11 @@ const IndexPage = ({ data }) => {
         image12={frontmatter.image12}
         image2={frontmatter.image2}
         image3={frontmatter.image3}
+        groupLogo={frontmatter.groupLogo}
+        constructionLogo={frontmatter.constructionLogo}
+        realEstateLogo={frontmatter.realEstateLogo}
+        constructionRoute={constructionRoute}
+        realEstateRoute={realEstateRoute}
         aboutRoute={aboutRoute}
         serviceRoute={serviceRoute}
         portfolioRoute={portfolioRoute}
@@ -200,6 +226,39 @@ export const pageQuery = graphql`
         }
 
         image3 {
+            alt
+            image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+
+        groupLogo {
+            alt
+            image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+
+        constructionLogo {
+            alt
+            image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+
+        realEstateLogo {
             alt
             image {
             childImageSharp {

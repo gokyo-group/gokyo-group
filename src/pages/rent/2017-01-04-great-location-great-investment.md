@@ -1,5 +1,5 @@
 ---
-templateKey: listing-post
+templateKey: rent-post
 title: Great Location Great investment
 date: 2017-01-04T15:04:10.000Z
 featuredpost: true

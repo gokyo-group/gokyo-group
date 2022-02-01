@@ -1,5 +1,5 @@
 ---
-templateKey: listing-post
+templateKey: rent-post
 title: A noob's guide to brewing with Chemex
 date: 2017-01-04T15:04:10.000Z
 featuredpost: false
