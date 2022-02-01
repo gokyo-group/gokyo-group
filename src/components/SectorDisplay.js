@@ -13,48 +13,47 @@ export default function SectorDisplay() {
                 <h1 className="title is-size-2 has-text-weight-bold is-bold-light has-text-centered">
                     Sectors
                 </h1>
-                <div className="columns is-mobile">
-                    <div className="column has-text-centered">
+                <div className="columns is-multiline is-mobile">
+                    <div className="column is-one-third has-text-centered">
                         <img 
                             src={residential}
                             style={{ width: '5em', height: '5em' }}
                         />
                         <p>RESIDENTIAL</p>
                     </div>
-                    <div className="column has-text-centered">
+                    <div className="column is-one-third has-text-centered">
                         <img 
                             src={health}
                             style={{ width: '5em', height: '5em' }}
                         />
                         <p>HEALTH</p>
                     </div>
-                    <div className="column has-text-centered">
+                    <div className="column is-one-third has-text-centered">
+                        <img 
+                            src={commercial}
+                            style={{ width: '5em',maxWidth:'5em', height: '5em' }}
+                        />
+                        <p>COMMERCIAL</p>
+                    </div>
+                    
+                <div className="column is-one-third has-text-centered">
                         <img 
                             src={retail}
                             style={{ width: '5em', height: '5em' }}
                         />
                         <p>RETAIL</p>
                     </div>
-                </div>
-                <div className="columns is-mobile">
-                    <div className="column has-text-centered">
-                        <img 
-                            src={commercial}
-                            style={{ width: '5em', height: '5em' }}
-                        />
-                        <p>COMMERCIAL</p>
-                    </div>
-                    <div className="column has-text-centered">
+                    <div className="column is-one-third has-text-centered">
                         <img 
                             src={education}
-                            style={{ width: '5em', height: '5em' }}
+                            style={{ width: '5em', maxWidth:'5em', height: '5em' }}
                         />
                         <p>EDUCATION</p>
                     </div>
-                    <div className="column has-text-centered">
+                    <div className="column is-one-third has-text-centered">
                         <img 
                             src={community}
-                            style={{ width: '5em', height: '5em' }}
+                            style={{ width: '5em', maxWidth:'5em',height: '5em' }}
                         />
                         <p>COMMUNITY</p></div>
                 </div>
