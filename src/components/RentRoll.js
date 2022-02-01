@@ -37,7 +37,7 @@ class RentRoll extends React.Component {
                 </header>
                 <p className="post-meta">
                     <Link
-                      className="title has-text-primary is-size-4"
+                      className="title has-text-danger is-size-4"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.title}
@@ -91,7 +91,7 @@ class RentRoll extends React.Component {
                 </header>
                 <p className="post-meta">
                     <Link
-                      className="title has-text-primary is-size-4"
+                      className="title has-text-danger is-size-4"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.title}
