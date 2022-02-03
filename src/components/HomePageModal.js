@@ -15,7 +15,7 @@ export default class HomePageModal extends React.Component {
     return (
       <div className="App">
         <div className={`modal ${active}`}>
-          <div className="modal-background" onClick={this.handleClick} />
+          <div className="modal-background" style={{opacity:"0.6"}} onClick={this.handleClick} />
           <div className="modal-content has-text-centered">
             <p className="pt-1 is-size-5">Welcome to Gokyo Group. Please make a selection to continue.</p>
             <div className="columns is-centered">

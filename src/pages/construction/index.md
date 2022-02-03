@@ -1,7 +1,7 @@
 ---
 templateKey: 'services-page'
 path: /construction
-title: CONSTRUCTION
+title: Construction
 image: /img/construction.jpg
 ---
 
